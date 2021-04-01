@@ -131,51 +131,40 @@ bool checkUnconstrained(char all_rules[MAX_RULES][CONSTRAINTS_IN_RULE][CONSTRAIN
 }
 
 
+int runAll(char all_rules[MAX_RULES][CONSTRAINTS_IN_RULE][CONSTRAINT_LENGTH][THIS_FEATURE_ARRAY_SIZE][CODE_LENGTH],
+           char families[FAMILY_ARRAY_SIZE][CODE_LENGTH],
+           char features[FEATURE_ARRAY_SIZE][CODE_LENGTH],
+           int loops) {
+    int i;
+    int result = 0;
+    for (i = 0; i < loops; ++i) {
+        int starting_index = 0;
+        int constrainResult = checkUnconstrained(all_rules, families, features, starting_index);
+        result = result + constrainResult;
+    }
+    return result;
+}
+
+
 int main() {
-    char this_feature[FEATURE_ARRAY_SIZE][CODE_LENGTH] = {"ABBA", "1AA", ""};
-    char features[FEATURE_ARRAY_SIZE][CODE_LENGTH] = {"1AA", "GHG01"};
-    char families[FAMILY_ARRAY_SIZE][CODE_LENGTH] = {"ABBA", "ZZZZ"};
-    char constraintA[CONSTRAINT_LENGTH][THIS_FEATURE_ARRAY_SIZE][CODE_LENGTH] = {
-        {"BABB", "3DD", ""}, {"ABBA", "4DD", "Y"},  {"ABBA", "1AA", ""}
-    };
-    char constraintB[CONSTRAINT_LENGTH][THIS_FEATURE_ARRAY_SIZE][CODE_LENGTH] = {
-        {"BABB", "3DD", "Y"}, {"ABBA", "4DD", ""},  {"ABBA", "1AA", "Y"}
-    };
-    char constraintC[CONSTRAINT_LENGTH][THIS_FEATURE_ARRAY_SIZE][CODE_LENGTH] = {
-        {"FEKA", "HAA02", ""}, {"FEKA", "GII01", "Y"},  {"ZZZD", "BGB", ""}
-    };
-    char constraintD[CONSTRAINT_LENGTH][THIS_FEATURE_ARRAY_SIZE][CODE_LENGTH] = {
-        {"FEKA", "HAA02", "Y"}, {"FEKA", "GII01", ""},  {"ZZZD", "BGB", "Y"}
-    };
-    char constraintEnd[CONSTRAINT_LENGTH][THIS_FEATURE_ARRAY_SIZE][CODE_LENGTH] = {
-
-    };
-
-    char rule1[CONSTRAINTS_IN_RULE][CONSTRAINT_LENGTH][THIS_FEATURE_ARRAY_SIZE][CODE_LENGTH] = {
-        {{"BABB", "3DD", ""}, {"ABBA", "4DD", ""},  {"ABBA", "1AA", ""}},
-        {{"BABB", "3DD", "Y"}, {"ABBA", "4DD", ""},  {"ABBA", "1AA", "Y"}}
-    };
+    char features[FEATURE_ARRAY_SIZE][CODE_LENGTH] = {"1AA", "3DD"};
+    char families[FAMILY_ARRAY_SIZE][CODE_LENGTH] = {"ABBA", "BABB"};
     char all_rules[MAX_RULES][CONSTRAINTS_IN_RULE][CONSTRAINT_LENGTH][THIS_FEATURE_ARRAY_SIZE][CODE_LENGTH] = {
         {
-            {{"BABB", "3DD", ""}, {"ABBA", "4DD", ""},  {"ABBA", "1AA", ""}},
+            {{"BABB", "3DD", ""}, {"ABBA", "4DD", "Y"},  {"ABBA", "1AA", ""}},
             {{"BABB", "3DD", "Y"}, {"ABBA", "4DD", ""},  {"ABBA", "1AA", "Y"}}
         },
         {
-            {{"FEKA", "HAA02", ""}, {"FEKA", "GII01", "Y"},  {"ZZZD", "BGB", ""}},
-            {{"FEKA", "HAA02", "Y"}, {"FEKA", "GII01", ""},  {"ZZZD", "BGB", "Y"}}
+            {{"FEKA", "HAA02", ""}, {"FEKA", "GII01", "Y"},  {"ZZZD", "BGB", ""},  {"ABBA", "1AA", ""}},
+            {{"FEKA", "HAA02", "Y"}, {"FEKA", "GII01", ""},  {"ZZZD", "BGB", "Y"},  {"ABBA", "1AA", "Y"}}
         }
     };
 
     int loops = 1000000;
-    int i;
-    for (i = 0; i < loops; ++i) {
-        int starting_index = 0;
-    //    result = checkThisFeature(this_feature, families, features);
-    //    result = constraintCheck(constraintC, families, features, starting_index);
-    //    result = pathThroughConstraints(rule1, families, features, starting_index);
-        bool result = checkUnconstrained(all_rules, families, features, starting_index);
-    }
-    return 0;
+    int result = runAll(all_rules, families, features, loops);
+    printf("%d", result);
+    return result;
+    //  Compile command: gcc -O3 -lm -o compare.exe compare.c
 }
 
 

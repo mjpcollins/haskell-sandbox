@@ -58,5 +58,5 @@ main = do
     let runAmount = 1000000
     let res = runManyTimes runAmount rules families features
     print res
-    -- Compile command:  ghc -O2 -o sandbox sandbox.hs;
+    -- Compile command: ghc -O2 -o compare compare.hs;
 
