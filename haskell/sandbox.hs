@@ -55,7 +55,8 @@ main = do
     let rules = [rule1, rule2]
     let families = packListOfStrings ["ABBA", "BABB"] []
     let features = packListOfStrings ["1AA", "3DD"] []
-    let runAmount = 10000
+    let runAmount = 1000000
     let res = runManyTimes runAmount rules families features
     print res
+    -- Compile command:  ghc -O2 -o sandbox sandbox.hs;
 
