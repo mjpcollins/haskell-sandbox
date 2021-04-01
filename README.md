@@ -55,10 +55,10 @@ Python is slow however. It takes 7.81 seconds to run 1,000,000 checks across all
 
 ### Cython
 
-I haven't used Cython before, so I was surprised by how easy it was to set up.
+I haven't used Cython in a while, so I forgot how easy it was to set up.
 
 I pretty much copy and pasted the basic [building code](https://cython.readthedocs.io/en/latest/src/quickstart/build.html)
-and it worked!
+and it worked.
 
 That small adjustment led to halving the run time. For 1,000,000 all rule checks it
 took 3.21 seconds.
