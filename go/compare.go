@@ -78,5 +78,4 @@ func in(val int, slice []int) bool {
     return false
 }
 
-// Run script: go run compare.go
-
+// Run script: go build compare.go

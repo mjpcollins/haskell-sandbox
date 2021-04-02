@@ -1,5 +1,6 @@
 # haskell-sandbox
-Playing around with some Haskell then comparing it to Python, Cython, and C.
+Playing around with some Haskell then comparing it to Python, Cython, C, 
+Go, and Rust.
 
 ## The Problem
 
@@ -30,7 +31,8 @@ I have created 4 different solutions to the problem.
 2. Python
 3. Cython
 4. C
-5. Go (in progress)
+5. Go
+6. Rust (In progress)
 
 ### Haskell
 
@@ -89,9 +91,13 @@ This is a pretty good run time, but about 0.4 seconds slower than Haskell.
 Wow. This language is _not bad_. Coding up is a little bit like javascript, but
 on the whole not too painful. 
 
-The speed is incredible. 0.32 seconds to do 1000000 rule check cycles.
+The speed is incredible. 0.11 seconds to do 1000000 rule check cycles.
 
 Go is awesome.
+
+### Rust
+
+In progress
 
 ## Testing Rig
 
