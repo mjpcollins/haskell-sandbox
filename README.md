@@ -84,12 +84,14 @@ However, it takes 1.57 seconds to run 1,000,000 all rule checks.
 
 This is a pretty good run time, but about 0.4 seconds slower than Haskell.
 
-In conclusion: Haskell is awesome?
-
 ### Go
 
-In progress...
+Wow. This language is _not bad_. Coding up is a little bit like javascript, but
+on the whole not too painful. 
 
+The speed is incredible. 0.32 seconds to do 1000000 rule check cycles.
+
+Go is awesome.
 
 ## Testing Rig
 

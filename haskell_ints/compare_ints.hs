@@ -38,7 +38,7 @@ runManyTimes runTimes rules families features
 
 main = do
     let constraintA = [[0, 1, 0], [1, 0, 1],  [1, 2, 0]]
-    let constraintB = [[0, 1, 1], [1, 0, 0],  [1, 2, 1]]
+    let constraintB = [[0, 1, 1], [1, 0, 1],  [1, 2, 0]]
     let constraintC = [[2, 3, 0], [2, 4, 1],  [3, 5, 0],  [1, 2, 0]]
     let constraintD = [[2, 3, 1], [2, 4, 0],  [3, 5, 1],  [1, 2, 1]]
     let rule1 = [constraintA, constraintB]
