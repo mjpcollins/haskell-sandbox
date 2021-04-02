@@ -26,10 +26,11 @@ All rules must have at least one "ok" route through them.
 ## The code versions
 
 I have created 4 different solutions to the problem.
-1. Haskell
+1. Haskell (and Haskell with Ints)
 2. Python
 3. Cython
 4. C
+5. Go (in progress)
 
 ### Haskell
 
@@ -43,6 +44,11 @@ published it online for free.
 The final product is quite nice to read through, very short, and incredibly fast.
 
 On my machine it ran 1,000,000 checks across all the rules in 1.13 seconds
+
+### Haskell Ints
+
+Changing the feature types from strings to ints gives a 1,000,000 checks time 
+of 0.89 seconds.
 
 ### Python
 
@@ -79,6 +85,11 @@ However, it takes 1.57 seconds to run 1,000,000 all rule checks.
 This is a pretty good run time, but about 0.4 seconds slower than Haskell.
 
 In conclusion: Haskell is awesome?
+
+### Go
+
+In progress...
+
 
 ## Testing Rig
 
