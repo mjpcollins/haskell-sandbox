@@ -32,7 +32,7 @@ I have created 4 different solutions to the problem.
 3. Cython
 4. C
 5. Go
-6. Rust (In progress)
+6. Rust
 
 ### Haskell
 
@@ -93,11 +93,17 @@ on the whole not too painful.
 
 The speed is incredible. 0.11 seconds to do 1000000 rule check cycles.
 
-Go is awesome.
+It is so fast that I suspect it might be doing some sneaky caching and not actually
+running the code. 
+
+Go is awesome - but treating speed as suspiciously fast...
 
 ### Rust
 
-In progress
+Rust takes a bit to get your head around. Ownership of variables is a bit fiddly, but
+got there in the end. Perforance is better than C, but strangely worse than Go. 
+
+Clocks in at 0.75 seconds for 1000000 rule check cycles.
 
 ## Testing Rig
 

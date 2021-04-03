@@ -13,11 +13,16 @@ func main() {
     var families = []int{0, 1}
     var features = []int{1, 2}
     var loops int = 1000000
-    var ans = [1000000]bool{}
+    var passes int = 0;
     for i := 0; i < loops; i++ {
-        ans[i] = check_unconstrained(all_rules, families, features)
+        if check_unconstrained(all_rules, families, features) {
+            // ensuring that it did actually run the code
+            passes++;
+        }
+
     }
-    fmt.Println(ans[1000000-1])
+    fmt.Println(passes)
+    // Run script: go build compare.go
 }
 
 func check_unconstrained(all_rules [][][][3]int, families []int, features []int) bool {
@@ -78,4 +83,3 @@ func in(val int, slice []int) bool {
     return false
 }
 
-// Run script: go build compare.go
