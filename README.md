@@ -101,7 +101,7 @@ Go is awesome - but treating speed as suspiciously fast...
 ### Rust
 
 Rust takes a bit to get your head around. Ownership of variables is a bit fiddly, but
-got there in the end. Perforance is better than C, but strangely worse than Go. 
+got there in the end. Performance is better than C, but strangely worse than Go. 
 
 Clocks in at 0.75 seconds for 1000000 rule check cycles.
 
